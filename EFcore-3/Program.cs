@@ -1,5 +1,6 @@
 ﻿using EFcore_3.Context;
 using EFcore_3.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFcore_3
 {
@@ -96,6 +97,49 @@ namespace EFcore_3
 
             #endregion
 
+            #region Explicit Loading
+            //using EmployeeDepartmentDbContext context= new EmployeeDepartmentDbContext();
+            //var employee = context.Employees.FirstOrDefault(E=>E.Id==2);
+            //context.Entry(employee).Reference("WorkFor").Load();
+            //Console.WriteLine(employee?.Name?? "Non");
+            //Console.WriteLine(employee.WorkFor?.Name??"Non");
+
+
+            //var dept = context.Departments.FirstOrDefault(E => E.Id == 2);
+            //context.Entry(dept).Collection("employees").Load();
+            //foreach (var d in dept.employees) 
+            //{
+            //    Console.WriteLine(d.Name);
+            //}
+            #endregion
+            #region Eager Loading
+            //using EmployeeDepartmentDbContext context = new EmployeeDepartmentDbContext();
+            //var employee = context.Employees.Include("WorkFor").FirstOrDefault(E => E.Id == 2);
+            //Console.WriteLine(employee?.Name ?? "Non");
+            //Console.WriteLine(employee.WorkFor?.Name ?? "Non");
+
+
+            //var dept = context.Departments.Include(D=>D.employees).FirstOrDefault(E => E.Id == 2);
+
+            //foreach (var d in dept.employees)
+            //{
+            //    Console.WriteLine(d.Name);
+            //}
+            #endregion
+            #region Lazy Loading 
+            //using EmployeeDepartmentDbContext context = new EmployeeDepartmentDbContext();
+            //var employee = context.Employees.FirstOrDefault(E => E.Id == 2);
+            //Console.WriteLine(employee?.Name ?? "Non");
+            //Console.WriteLine(employee.WorkFor?.Name ?? "Non");
+
+
+            //var dept = context.Departments.FirstOrDefault(E => E.Id == 2);
+
+            //foreach (var d in dept.employees)
+            //{
+            //    Console.WriteLine(d.Name);
+            //}
+            #endregion
 
 
         }

@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace EFcore_3.Entities
 {
-    public class Student
+    public class Department
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
-        public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
-
+        public virtual ICollection<EmployeeWithDept> employees { get; set; } = new HashSet<EmployeeWithDept>();
     }
 }
