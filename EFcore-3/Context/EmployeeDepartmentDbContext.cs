@@ -12,7 +12,7 @@ namespace EFcore_3.Context
     {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-     
+            modelBuilder.Entity<EmployeeDepartmentView>().ToView("EmployeeDepartmentView");
             base.OnModelCreating(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -24,6 +24,7 @@ namespace EFcore_3.Context
 
         public DbSet<EmployeeWithDept> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<EmployeeDepartmentView> EmployeeDepartmentView { get; set; }
 
     }
 }
