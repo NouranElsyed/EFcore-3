@@ -3,6 +3,7 @@ using EFcore_3.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFcore_3.Migrations.EmployeeDepartmentDb
 {
     [DbContext(typeof(EmployeeDepartmentDbContext))]
-    partial class EmployeeDepartmentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240831062420_EmployeeDepartmentView")]
+    partial class EmployeeDepartmentView
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
